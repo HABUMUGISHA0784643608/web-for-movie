@@ -1,0 +1,59 @@
+
+
+ <center> <h1> HD VIDEOS WEBSITE FOR US </h1> </center>
+<style>
+ nav{
+  float:left;
+}
+.card-img-top
+{
+   height:200px;
+   width:250px;
+}
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+
+      
+</style>
+
+
+<center><h1>Movies </h1></center>
+<div class="container">   
+<% if !flash[:notice].blank? %>   
+   <div>   
+      <%= flash[:notice] %>   
+   </div>   
+<% end %>   
+  
+<br>   
+  
+<center><b><u><h4><%= link_to "New Resume", new_resume_path %></h4></u></b></center>  
+<br>   
+<br>   
+
+<div class="album py-5 bg-light">
+        <div class="container">
+        <div class="row">
+ <% @resumes.each do |resume| %> 
+          
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img src="<%= resume.attachment %>" class="card-img-top"  alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"><b>Title:</b><%= resume.title %><br><b>category:</b><%= resume.category %><br><b>releasedyear:</b><%= resume.releasedyear %><br><b>price:</b><%= resume.price %></p>
+                  <b><u><%= link_to "Download", resume.attachment_url %></b></u>
+                  <b><u><%= link_to "delete",  resume, method: :delete, confirm: "Are you sure you want to delete #{resume.attachment}?" %>
+                  <b><u><%= link_to "upload" %></b></u>
+                  <b><u><%= link_to "view" %></b></u>
+                  </b></u>
+                  </div>
+                </div>
+              </div>
+              <% end %> 
+            </div>
+            <br>
+            <br>
+            <footer>
+            
+            

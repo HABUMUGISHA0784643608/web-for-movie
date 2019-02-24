@@ -1,0 +1,19 @@
+   <h1>movie web</h1>
+   <%= form_for @resume, html: { multipart: true } do |f| %>   
+      <%= f.label :title %>   
+      <%= f.text_field :title %>   
+      <br><br>   
+      <%= f.label :category %>   
+      <%= f.text_field :category %>   
+      <br><br>   
+      <%= f.label :releasedyear %>   
+      <%= f.text_field :releasedyear %>   
+      <br><br>   
+      <%= f.label :price %>   
+      <%= f.text_field :price %>   
+      <br><br>   
+      <%= f.label :attachment %>   
+      <%= f.file_field :attachment %>   
+      <br>   
+      <%= f.submit "Save" %>   
+   <% end %>   
